@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 // Imports of used components
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
@@ -24,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatMenuModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule,
+    MatSelectModule,
   ],
   exports: [
     MatInputModule,
@@ -34,7 +38,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatMenuModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule,
+    MatSelectModule
   ],
 })
 export class AngularMaterialModule {}

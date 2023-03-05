@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddUserComponent } from './add-user/add-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HasRoleGuard } from './has-role.guard';
 import { IsAuthenticatedGuard } from './is-authenticated.guard';
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
+    canActivate: [IsAuthenticatedGuard, HasRoleGuard],
+    data: {
+      isAdmin: true,
+    },
+  },
+  {
+    path: 'add-user',
+    component: AddUserComponent,
     canActivate: [IsAuthenticatedGuard, HasRoleGuard],
     data: {
       isAdmin: true,

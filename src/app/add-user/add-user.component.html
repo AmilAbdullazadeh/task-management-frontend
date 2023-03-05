@@ -1,0 +1,49 @@
+<form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
+  <div style="display: flex; justify-content: center">
+    <mat-card class="form-container">
+      <mat-card-title>Add user</mat-card-title>
+
+      <!-- Name -->
+      <div>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+      </div>
+      <!-- /Name -->
+
+      <!-- Email -->
+      <div>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+      </div>
+      <!-- /Email -->
+
+      <!-- Password -->
+      <div>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+      </div>
+      <!-- /Password -->
+
+      <!-- Role -->
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select [(value)]="selected" >
+          <mat-option *ngFor="let role of roles" [value]="role">
+            {{role | uppercase}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- /Role -->
+
+      <div>
+        <button type="submit" mat-raised-button color="primary">Add</button>
+      </div>
+    </mat-card>
+  </div>
+</form>
