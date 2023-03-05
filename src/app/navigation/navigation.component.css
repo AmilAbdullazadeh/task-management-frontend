@@ -1,0 +1,16 @@
+mat-toolbar {
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-items {
+  list-style-type: none;
+  display: flex;
+}
+.nav-items a {
+  margin-right: 40px;
+}
