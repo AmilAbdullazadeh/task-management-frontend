@@ -9,9 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptorProvider } from './auth.interceptor';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HasRoleDirective } from './has-role.directive';
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { RegisterComponent } from './register/register.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { UsersComponent } from './users/users.component';
 
@@ -20,10 +20,10 @@ import { UsersComponent } from './users/users.component';
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent,
     NavigationComponent,
     UsersComponent,
     TasksComponent,
+    HasRoleDirective,
   ],
   imports: [
     BrowserModule,

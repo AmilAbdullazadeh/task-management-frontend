@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
+import { UserModel } from '../models/user.model';
 import { ApiService } from './api.service';
-import { UserModel } from './models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +21,10 @@ export class AuthService {
   constructor(private apiService: ApiService) {
     this._isLoggedIn$.next(!!this.token);
     this.user = this.getUser(this.token);
+  }
+
+  hasRole(isAdmin: boolean): boolean {
+    return this.user?.isAdmin === isAdmin || false;
   }
 
   login(email: string, password: string) {

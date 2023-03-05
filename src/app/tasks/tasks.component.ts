@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
-import { ApiService } from '../api.service';
 import { TaskModel } from '../models/task.model';
+import { TaskService } from './../services/task.service';
 
 @Component({
   selector: 'app-tasks',
@@ -12,10 +12,10 @@ export class TasksComponent implements OnInit {
   tasks!: TaskModel[];
   displayedColumns: string[] = ['_id', 'title', 'description', 'assignedTo'];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    this.apiService
+    this.taskService
       .getTasks()
       .pipe(tap((it) => (this.tasks = it)))
       .subscribe();
