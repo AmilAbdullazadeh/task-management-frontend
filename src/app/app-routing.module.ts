@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddTaskComponent } from './add-task/add-task.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HasRoleGuard } from './guards/has-role.guard';
@@ -33,6 +34,14 @@ const routes: Routes = [
   {
     path: 'tasks',
     component: TasksComponent,
+    canActivate: [IsAuthenticatedGuard, HasRoleGuard],
+    data: {
+      isAdmin: true,
+    },
+  },
+  {
+    path: 'add-task',
+    component: AddTaskComponent,
     canActivate: [IsAuthenticatedGuard, HasRoleGuard],
     data: {
       isAdmin: true,

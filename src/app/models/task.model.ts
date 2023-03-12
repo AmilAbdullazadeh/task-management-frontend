@@ -6,5 +6,5 @@ export interface TaskModel {
 }
 
 export interface AssignedToModel {
-  _id?: string;
+  _id?: string | null;
 }

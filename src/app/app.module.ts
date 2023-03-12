@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { UsersComponent } from './users/users.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UsersComponent } from './users/users.component';
     TasksComponent,
     HasRoleDirective,
     AddUserComponent,
+    AddTaskComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
+<button mat-icon-button>
+  <a routerLink="/add-task">Add Task</a>
+</button>
 <table mat-table [dataSource]="tasks" class="mat-elevation-z8">
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
@@ -28,4 +31,5 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
 </table>

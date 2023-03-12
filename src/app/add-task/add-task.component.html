@@ -1,0 +1,40 @@
+<form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
+  <div style="display: flex; justify-content: center">
+    <mat-card class="form-container">
+      <mat-card-title>Add task</mat-card-title>
+
+      <!-- title -->
+      <div>
+        <mat-form-field>
+          <mat-label>title</mat-label>
+          <input matInput type="text" formControlName="title" />
+        </mat-form-field>
+      </div>
+      <!-- /title -->
+
+      <!-- description -->
+      <div>
+        <mat-form-field>
+          <mat-label>description</mat-label>
+          <input matInput type="text" formControlName="description" />
+        </mat-form-field>
+      </div>
+      <!-- /description -->
+
+      <!-- Assign to -->
+      <mat-form-field appearance="fill">
+        <mat-label>Assign to:</mat-label>
+        <mat-select formControlName="assignedTo" >
+          <mat-option *ngFor="let user of users" [value]="user._id">
+            {{user.name | uppercase}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- /Assign to -->
+
+      <div>
+        <button type="submit" mat-raised-button color="primary">Add</button>
+      </div>
+    </mat-card>
+  </div>
+</form>

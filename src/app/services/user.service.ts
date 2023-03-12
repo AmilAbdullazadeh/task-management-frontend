@@ -14,15 +14,11 @@ export class UserService {
   private baseUrl = 'https://task-management-backend-eight.vercel.app/api/';
 
   getUsers(): Observable<UserModel[]> {
-    return this.http.get<UserModel[]>(`${this.baseUrl}users`, {
-      headers: {},
-    });
+    return this.http.get<UserModel[]>(`${this.baseUrl}users`);
   }
 
-  getUser(id: number): Observable<UserModel> {
-    return this.http.get<UserModel>(`${this.baseUrl}users/${id}`, {
-      headers: {},
-    });
+  getUser(id: string): Observable<UserModel> {
+    return this.http.get<UserModel>(`${this.baseUrl}users/${id}`);
   }
 
   addUser(user: UserModel): Observable<UserModel> {
@@ -30,12 +26,12 @@ export class UserService {
   }
 
   updateUser(user: UserModel): Observable<UserModel> {
-    const url = `${this.baseUrl}/${user?._id}`;
+    const url = `${this.baseUrl}${user?._id}`;
     return this.http.put<UserModel>(url, user);
   }
 
   deleteUser(id: string): Observable<any> {
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${this.baseUrl}${id}`;
     return this.http.delete(url);
   }
 }
