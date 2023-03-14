@@ -18,7 +18,7 @@ export class AddTaskComponent implements OnInit {
   form = this.fb.group({
     title: ['', [Validators.required]],
     description: ['', [Validators.required]],
-    assignedTo: ['', [Validators.required]]
+    assignedTo: ['', [Validators.required]],
   });
 
   constructor(

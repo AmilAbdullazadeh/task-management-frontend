@@ -24,9 +24,9 @@
       <!-- Assign to -->
       <mat-form-field appearance="fill">
         <mat-label>Assign to:</mat-label>
-        <mat-select formControlName="assignedTo" >
+        <mat-select formControlName="assignedTo">
           <mat-option *ngFor="let user of users" [value]="user._id">
-            {{user.name | uppercase}}
+            {{ user.name | uppercase }}
           </mat-option>
         </mat-select>
       </mat-form-field>
